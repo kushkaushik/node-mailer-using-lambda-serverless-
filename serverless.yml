@@ -1,0 +1,21 @@
+org: kush271
+app: my-gmail
+service: Gmail
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 1024
+  stage: dev
+  timeout: 3
+  region: ap-south-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi: '*'
+    environment:
+      EMAIL: kush.kaushik@heliverse.com
+      PASS: kyjwjavzzzcprwru
